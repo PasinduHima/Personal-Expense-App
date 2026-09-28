@@ -12,12 +12,20 @@ class _ExpencesState extends State<Expences> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Expence Master"),
-        backgroundColor:const Color.fromARGB(255, 194, 33, 243),
-      ), 
-      body: const Center(
-        child: Text("My Expenses"),
-
+        title: const Text("Expence Master",
+        style : TextStyle(color: Colors.black),
+        ),
+        backgroundColor: const Color.fromARGB(255, 116, 6, 150),
+        elevation: 10,
+        actions: [
+          Container(
+            color: Colors.yellow,
+            child: IconButton(
+              onPressed: () {},
+               icon: const Icon(Icons.add, color: Colors.black)),
+               
+          ),
+        ],
       ),
     );
   }
