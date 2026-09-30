@@ -40,20 +40,22 @@ class _ExpencesState extends State<Expences> {
             color: Colors.yellow,
             child: IconButton(
               onPressed: () {},
-              icon: const Icon(
-                Icons.add,
-                color: Colors.black,
-              ),
+              icon: const Icon(Icons.add, color: Colors.black),
             ),
           ),
         ],
       ),
 
-      body: ListView.builder(
-        itemCount: _expenceList.length,
-        itemBuilder: (context, index) {
-          return Text(_expenceList[index].title);
-        },
+      body: Column(
+        children: [
+          Expanded(child:  ListView.builder(
+            itemCount: _expenceList.length,
+            itemBuilder: (context, index) {
+              return Text(_expenceList[index].title);
+        
+            },
+          ),
+      )],
       ),
     );
   }
