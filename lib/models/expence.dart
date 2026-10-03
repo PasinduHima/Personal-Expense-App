@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:uuid/uuid.dart';
 import 'package:intl/intl.dart';
 
 part 'expence.g.dart';
-
-//create a uuid
-final uuid = const Uuid().v4();
 
 //date formater
 final formatedDate = DateFormat.yMd();
@@ -15,7 +11,7 @@ final formatedDate = DateFormat.yMd();
 enum Category { lowest, low, high, highst }
 
 //category icons
-final CategoryIcons = {
+final categoryIcons = {
   Category.lowest: Icons.lunch_dining,
   Category.low: Icons.travel_explore,
   Category.high: Icons.leave_bags_at_home_rounded,

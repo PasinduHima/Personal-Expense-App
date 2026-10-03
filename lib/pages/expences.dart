@@ -1,16 +1,16 @@
 import 'package:expence_tracker_app/server/database.dart';
 import 'package:expence_tracker_app/widgets/add_expence.dart';
-import 'package:expence_tracker_app/widgets/expences_list.dart';
+import 'package:expence_tracker_app/widgets/expence_list.dart';
 import 'package:flutter/material.dart';
 import 'package:expence_tracker_app/models/expence.dart';
 import 'package:hive/hive.dart';
-import 'package:pie_chart/pie_chart.dart';
+import 'package:uuid/uuid.dart';
 
 class Expences extends StatefulWidget {
   const Expences({Key? key}) : super(key: key);
 
   @override
-  _ExpencesState createState() => _ExpencesState();
+  State<Expences> createState() => _ExpencesState();
 }
 
 class _ExpencesState extends State<Expences> {
@@ -41,7 +41,7 @@ class _ExpencesState extends State<Expences> {
         return AddNewExpencce(
           onAddExpence: addNewExpence,
           expence: ExpenceModel(
-            id: uuid,
+            id: const Uuid().v4(),
             title: "",
             decsription: "",
             date: DateTime.now(),
@@ -194,7 +194,7 @@ class _ExpencesState extends State<Expences> {
         const Center(child: Text("No data found please add some!"));
 
     if (db.expenceList.isNotEmpty) {
-      mainContent = ExpencesList(
+      mainContent = ExpenccesList(
         expenseList: db.expenceList,
         onDeleteExpence: removeExpence,
         onEditExpence: editExpence,

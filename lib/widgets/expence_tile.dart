@@ -26,12 +26,12 @@ class ExpenceItem extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  '\$${expence.decsription}',
+                  expence.decsription,
                 ),
                 const Spacer(),
                 Row(
                   children: [
-                    Icon(CategoryIcons[expence.category]),
+                    Icon(categoryIcons[expence.category]),
                     const SizedBox(width: 8),
                     Text(expence.formattdeDateValue),
                   ],

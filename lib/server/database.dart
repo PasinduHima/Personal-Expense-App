@@ -1,4 +1,5 @@
 import 'package:expence_tracker_app/models/expence.dart';
+import 'package:flutter/foundation.dart' hide Category;
 import 'package:hive/hive.dart';
 import 'package:uuid/uuid.dart';
 
@@ -40,6 +41,6 @@ class Database {
   Future<void> updateData() async {
     await _myBox.put("EXP_DATA", expenceList);
 
-    print("saved data");
+    debugPrint("saved data");
   }
 }

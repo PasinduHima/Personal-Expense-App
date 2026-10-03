@@ -77,7 +77,7 @@ class _AddNewExpencceState extends State<AddNewExpencce> {
     } else {
       // Create a new expense model
       ExpenceModel updatedExpence;
-      print(widget.expence.id);
+      debugPrint(widget.expence.id);
 
       // If the expense has a title, it means it's an existing expense, so update it
       if (widget.expence.title.isNotEmpty) {
@@ -209,14 +209,14 @@ class _AddNewExpencceState extends State<AddNewExpencce> {
                       },
                       style: const ButtonStyle(
                         backgroundColor:
-                            MaterialStatePropertyAll(Colors.redAccent),
+                            WidgetStatePropertyAll(Colors.redAccent),
                       ),
                       child: const Text("Close"),
                     ),
                     ElevatedButton(
                       onPressed: _handleSaveExpences,
                       style: const ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(Colors.green),
+                        backgroundColor: WidgetStatePropertyAll(Colors.green),
                       ),
                       child: const Text("Save"),
                     ),

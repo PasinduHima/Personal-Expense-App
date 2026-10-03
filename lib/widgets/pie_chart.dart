@@ -1,19 +1,20 @@
 import 'package:flutter/widgets.dart';
+import 'package:pie_chart/pie_chart.dart' as pie;
 
-class PieChart extends StatefulWidget {
+class ExpencePieChart extends StatelessWidget {
   final Map<String, double> dataMap;
-  const PieChart({super.key, required this.dataMap});
+  const ExpencePieChart({super.key, required this.dataMap});
 
-  @override
-  State<PieChart> createState() => _PieChartState();
-}
-
-class _PieChartState extends State<PieChart> {
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: PieChart(dataMap: widget.dataMap),
+      child: pie.PieChart(
+        dataMap: dataMap,
+        animationDuration: const Duration(milliseconds: 800),
+        chartLegendSpacing: 32,
+        centerText: "Expences",
+      ),
     );
   }
 }
